@@ -8,9 +8,13 @@ This repo provides all the required resources to deploy and test a Data Collecto
 Successful deployment depends on the following 3 files, borrowed from the original [Azure ML examples](https://github.com/Azure/azureml-examples/tree/main/sdk/python/endpoints/online/model-1) repo: _inference model_, _environment configuration_ and _scoring script_.
 
 ### 1.1 - Inference model
-
+**sklearn_regression_model.pkl** is a SciKit-Learn sample regression model in a pickle format. We'll re-use it "as is".
 
 ### 1.2 - Environment configuration
+**conda.yaml** is our Conda file, to define running environment for our machine learning model. It has been modified to include AzureML monitoring package.
+``` JSON
+azureml-ai-monitoring
+```
 
 ### 1.3 - Scoring script
 
