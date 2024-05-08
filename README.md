@@ -11,7 +11,7 @@ Successful deployment depends on the following 3 files, borrowed from the origin
 **sklearn_regression_model.pkl** is a SciKit-Learn sample regression model in a pickle format. We'll re-use it "as is".
 
 ### 1.2 - Environment configuration
-**conda.yaml** is our Conda file, to define running environment for our machine learning model. It has been modified to include AzureML monitoring package.
+**conda.yaml** is our Conda file, to define running environment for our machine learning model. It has been modified to include the following AzureML monitoring Python package.
 ``` JSON
 azureml-ai-monitoring
 ```
