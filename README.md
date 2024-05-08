@@ -34,8 +34,19 @@ outputs_collector = Collector(name='model_outputs')
 artificial_context = BasicCorrelationContext(id='Laziz_Demo')
 ```
 
-"model_inputs" and "model_outputs" are reserved Data Collector names, used to auto-register relevant Azure ML data assets.
+"_model_inputs_" and "_model_outputs_" are reserved Data Collector names, used to auto-register relevant Azure ML data assets.
 ![Screenshot_1.3a](images/screenshot_1_3a.png)
 
+_run_ function contains 2 data processing blocks. First, we convert our input inference data into pandas DataFrame to log it along with our correlation context.
+``` Python
+input_df = pd.DataFrame(data)
+context = inputs_collector.collect(input_df , artificial_context)
+```
+
+The same operation is then performed with the model's prediction to log it in the Data Collctor's output.
+``` Python
+output_df = pd.DataFrame(result)
+outputs_collector.collect(output_df, context)
+```
 
 ## 2 - Solution deployment and testing
