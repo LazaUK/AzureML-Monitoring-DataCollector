@@ -26,6 +26,16 @@ from azureml.ai.monitoring.context import BasicCorrelationContext
 import pandas as pd
 ```
 
-tt
+_init_ function initialises global Data Collector variables.
+``` Python
+global inputs_collector, outputs_collector, artificial_context
+inputs_collector = Collector(name='model_inputs')          
+outputs_collector = Collector(name='model_outputs')
+artificial_context = BasicCorrelationContext(id='Laziz_Demo')
+```
+
+"model_inputs" and "model_outputs" are reserved Data Collector names, used to auto-register relevant Azure ML data assets.
+![Screenshot_1.3a](images/screenshot_1_3a.png)
+
 
 ## 2 - Solution deployment and testing
