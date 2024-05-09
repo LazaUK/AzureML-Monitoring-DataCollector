@@ -12,7 +12,7 @@ Successful deployment depends on the following 3 files, borrowed from the origin
 
 ### 1.2 - Environment configuration
 **_conda.yaml_** is our Conda file, to define running environment for our machine learning model. It has been modified to include the following AzureML monitoring Python package.
-``` JSON
+```
 azureml-ai-monitoring
 ```
 
